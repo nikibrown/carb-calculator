@@ -1,0 +1,83 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>🍔 🍩 🍞 A thing to calculate carbs to put in your face</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        A thing to calculate carbs to put in your face
+      </h1>
+    </header>
+
+    <main>
+      
+      <form>
+        <label for="cardio-type">Type of activity</label>
+        <select id="cardio-type">
+          <option value="swim-efficient">Swim (efficient)</option>
+          <option value="swim-less-efficient">Swim (less efficient)</option>
+          <option value="run">Run</option>
+          <option value="run-avg-130">Run (Avg heartrate &#60; 130bpm)</option>
+          <option value="run-avg-120">Run (Avg heartrate &#60; 120bpm)</option>
+          <option value="bike">Bike</option>
+          <option value="bike-avg-130">Bike (Avg heartrate &#60; 130bpm)</option>
+          <option value="bike-avg-120">Bike (Avg heartrate &#60; 120bpm)</option>
+        </select>
+
+        <input type="radio" id="imperial" name="units" value="imperial" checked>
+        <label for="imperial">Imperial (Pounds, Miles)</label>
+
+        <input type="radio" id="metric" name="units" value="metric">
+        <label for="metric">Metric (KG, KM)</label>
+
+        <input type="number" id="weight" placeholder="Your current weight" value="">
+
+        <input type="number" id="distance" placeholder="How far you did the thing" value="">
+
+        <input type="button" value="How many carbs?" id="calculate-carbs">
+
+        <p id="results">
+          You get to eat <span id="carbs"></span>g of carbs!!! 🍔 🍩 🍞
+        </p>
+      </form>
+      
+      <p>
+        Formulas used:
+      </p>
+      
+      <ul>
+        
+        <li>Run: weight in KG * KM * .25</li>
+        <li>Swim: weight in KG * KM * .25 * 3</li>
+        <li>Bike: weight in KG * KM * .25 * .4</li>
+      </ul>
+      
+    </main>
+     
+
+
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script src="/client.js"></script>
+
+  </body>
+</html>
